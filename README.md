@@ -85,6 +85,12 @@ const cartCount = document.getElementById("cart-count");
 const subtotalEl = document.getElementById("subtotal");
 const shippingEl = document.getElementById("shipping");
 const totalEl = document.getElementById("total");
+const loginModal = document.getElementById("loginModal");
+const checkoutModal = document.getElementById("checkoutModal");
+const checkoutBtn = document.getElementById("checkoutBtn");
+const checkoutItemsEl = document.getElementById("checkoutItems");
+const checkoutShippingEl = document.getElementById("checkoutShipping");
+const checkoutTotalEl = document.getElementById("checkoutTotal");
 
 let activeFilter = "all";
 let cart = [];
@@ -181,11 +187,14 @@ function updateCart() {
     subtotalEl.textContent = formatPrice(0);
     shippingEl.textContent = formatPrice(0);
     totalEl.textContent = formatPrice(0);
+    checkoutItemsEl.textContent = "0";
+    checkoutShippingEl.textContent = formatPrice(0);
+    checkoutTotalEl.textContent = formatPrice(0);
     return;
   }
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = subtotal > 70 ? 0 : 9.99;
+  const shipping = subtotal > 80 ? 0 : 9.99;
   const total = subtotal + shipping;
 
   cartItemsContainer.innerHTML = cart
@@ -213,6 +222,10 @@ function updateCart() {
   subtotalEl.textContent = formatPrice(subtotal);
   shippingEl.textContent = formatPrice(shipping);
   totalEl.textContent = formatPrice(total);
+
+  checkoutItemsEl.textContent = String(totalItems);
+  checkoutShippingEl.textContent = formatPrice(shipping);
+  checkoutTotalEl.textContent = formatPrice(total);
 
   cartItemsContainer.querySelectorAll("button[data-action]").forEach((button) => {
     button.addEventListener("click", () => updateCartItem(Number(button.dataset.id), button.dataset.action));
@@ -249,6 +262,23 @@ function openCart() {
 function closeCart() {
   cartDrawer.classList.remove("open");
   overlay.classList.remove("show");
+  loginModal.classList.remove("open");
+  checkoutModal.classList.remove("open");
+}
+
+function openModal(element) {
+  if (!element) return;
+  element.classList.add("open");
+  overlay.classList.add("show");
+}
+
+function closeModal(element) {
+  if (!element) return;
+  element.classList.remove("open");
+  const anyOpen = document.querySelector(".modal.open");
+  if (!anyOpen) {
+    overlay.classList.remove("show");
+  }
 }
 
 searchInput.addEventListener("input", renderProducts);
@@ -263,21 +293,64 @@ filterButtons.forEach((button) => {
 
 cartButton.addEventListener("click", openCart);
 closeCartButton.addEventListener("click", closeCart);
-overlay.addEventListener("click", closeCart);
+overlay.addEventListener("click", () => {
+  closeCart();
+  document.querySelectorAll(".modal").forEach((modal) => modal.classList.remove("open"));
+});
 
-document.querySelector(".cart-checkout").addEventListener("click", () => {
-  alert("Checkout started! Your eco-friendly order is ready to be processed.");
+document.getElementById("openLoginBtn").addEventListener("click", () => openModal(loginModal));
+document.getElementById("openLoginBtnSecondary").addEventListener("click", () => openModal(loginModal));
+
+checkoutBtn.addEventListener("click", () => {
+  if (cart.length === 0) {
+    alert("Your cart is empty. Add a product before checking out.");
+    return;
+  }
+  openModal(checkoutModal);
+});
+
+document.querySelectorAll(".modal-close").forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = button.dataset.close;
+    if (target === "loginModal") closeModal(loginModal);
+    if (target === "checkoutModal") closeModal(checkoutModal);
+    const stillOpen = document.querySelector(".modal.open");
+    if (!stillOpen) overlay.classList.remove("show");
+  });
+});
+
+document.getElementById("loginForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const emailInput = event.currentTarget.querySelector('input[type="email"]');
+  if (emailInput.value.trim()) {
+    alert("Welcome back! You are now signed in to Ecoomars.");
+    closeModal(loginModal);
+    overlay.classList.remove("show");
+  }
+});
+
+document.getElementById("checkoutForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+  alert("Order placed successfully! Your eco essentials are on the way.");
+  cart = [];
+  updateCart();
+  closeModal(checkoutModal);
+  overlay.classList.remove("show");
+  cartDrawer.classList.remove("open");
 });
 
 document.querySelector(".newsletter-form").addEventListener("submit", (event) => {
   event.preventDefault();
   const emailInput = event.currentTarget.querySelector("input");
   if (emailInput.value.trim()) {
-    alert("Thanks for joining Ecoomars! You’re on the list for our next eco drop.");
+    alert("Thanks for joining Ecoomars. You’re on the list for our next eco drop.");
     emailInput.value = "";
   }
 });
 
 renderProducts();
 updateCart();
-

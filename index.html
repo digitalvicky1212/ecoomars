@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecoomars | Sustainable Shopping</title>
+    <title>Ecoomars | Luxury Sustainable Living</title>
     <meta
       name="description"
-      content="Ecoomars is your destination for eco-friendly essentials, modern home goods, wellness products, and sustainable lifestyle upgrades."
+      content="Ecoomars is a luxury eco-commerce boutique for sustainable home, wellness, and everyday essentials."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,19 +19,20 @@
   <body>
     <header class="topbar">
       <div class="container topbar-inner">
-        <p>Free shipping over $70 on eco essentials</p>
-        <a href="#newsletter">Join the eco club</a>
+        <p>Free shipping on orders over $80 • Carbon-neutral delivery</p>
+        <button class="text-link" id="openLoginBtn">Member login</button>
       </div>
     </header>
 
     <header class="site-header">
       <div class="container nav-wrap">
-        <div class="brand" aria-label="Ecoomars home">
+        <a href="#home" class="brand" aria-label="Ecoomars home">
           <span class="brand-mark">E</span>
           <span>ecoomars</span>
-        </div>
+        </a>
 
         <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
           <a href="#shop">Shop</a>
           <a href="#categories">Categories</a>
           <a href="#featured">Featured</a>
@@ -40,9 +41,7 @@
         </nav>
 
         <div class="nav-actions">
-          <button class="icon-button search-button" aria-label="Search products">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 015.88 12.8l4.25 4.25 1.41-1.41-4.25-4.25A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/></svg>
-          </button>
+          <button class="nav-btn" id="openLoginBtnSecondary" aria-label="Login">Sign in</button>
           <button class="icon-button cart-button" aria-label="Open cart">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 110 4 2 2 0 010-4zm10 0a2 2 0 110 4 2 2 0 010-4zM7.2 14h10.6a2 2 0 001.96-1.52l1.5-6A2 2 0 0018.3 4H6.2L5.8 2H2v2h2.1l2.1 9.3L7 18H19v-2H8.2l.7-3.4z"/></svg>
             <span class="cart-count" id="cart-count">0</span>
@@ -51,94 +50,90 @@
       </div>
     </header>
 
-    <main>
+    <main id="home">
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Sustainability, styled beautifully</span>
-            <h1>Better living starts with better choices.</h1>
+            <span class="eyebrow">Luxury sustainability</span>
+            <h1>Curated essentials for a richer, greener life.</h1>
             <p>
-              Discover sustainable essentials for your home, lifestyle, and everyday rituals.
-              Thoughtful design meets planet-first living.
+              Discover premium eco home goods, conscious wellness picks, and elevated everyday pieces
+              designed to feel beautiful and last beautifully.
             </p>
             <div class="hero-actions">
-              <a href="#shop" class="btn btn-primary">Shop best sellers</a>
-              <a href="#about" class="btn btn-secondary">Why Ecoomars</a>
+              <a href="#shop" class="btn btn-primary">Shop collection</a>
+              <a href="#about" class="btn btn-secondary">Our story</a>
             </div>
-            <ul class="trust-list" aria-label="Shopping benefits">
-              <li>✔ Plastic-free picks</li>
-              <li>✔ Carbon-conscious shipping</li>
-              <li>✔ 30-day returns</li>
+            <ul class="trust-list" aria-label="Brand benefits">
+              <li>✔ Low-impact materials</li>
+              <li>✔ Thoughtful packaging</li>
+              <li>✔ Complimentary support</li>
             </ul>
           </div>
 
-          <div class="hero-visual" aria-label="Featured eco products">
+          <div class="hero-visual" aria-label="Premium eco products">
             <div class="floating-card main-card">
               <img
-                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80"
-                alt="Minimal home interior with eco-friendly decor"
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+                alt="Luxury eco-inspired home interior"
               />
-              <div class="promo-badge">New arrival</div>
+              <div class="promo-badge">New capsule drop</div>
             </div>
-            <div class="floating-card small-card">
-              <div class="mini-stat">
-                <strong>4.9/5</strong>
-                <span>Customer love</span>
-              </div>
+            <div class="floating-card small-card stat-one">
+              <strong>4.9/5</strong>
+              <span>average rating</span>
             </div>
-            <div class="floating-card small-card accent">
-              <div>
-                <strong>Over 12k</strong>
-                <span>happy eco shoppers</span>
-              </div>
+            <div class="floating-card small-card stat-two">
+              <strong>12k+</strong>
+              <span>happy customers</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="brands container" aria-label="Featured brands">
+      <section class="brands container" aria-label="Featured lifestyle brands">
         <div class="brand-row">
           <span>earthwise</span>
-          <span>bare & bloom</span>
+          <span>lune & co.</span>
           <span>verdant</span>
-          <span>northform</span>
+          <span>natura form</span>
           <span>leaflane</span>
         </div>
       </section>
 
       <section id="categories" class="categories container">
         <div class="section-heading">
-          <span class="eyebrow">Browse by category</span>
-          <h2>Shop what fits your lifestyle</h2>
+          <span class="eyebrow">Shop by category</span>
+          <h2>Elevated essentials for every ritual</h2>
         </div>
 
         <div class="category-grid">
           <article class="category-item">
-            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=700&q=80" alt="Home essentials" />
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=700&q=80" alt="Home decor category" />
             <div>
-              <h3>Home Essentials</h3>
-              <p>Natural, beautiful upgrades for everyday living.</p>
+              <h3>Home</h3>
+              <p>Timeless objects for beautiful everyday living.</p>
             </div>
           </article>
           <article class="category-item">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Wellness and care" />
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Wellness category" />
             <div>
-              <h3>Wellness & Care</h3>
-              <p>Mindful items for your daily rituals and routines.</p>
+              <h3>Wellness</h3>
+              <p>Mindful care rituals and feel-good essentials.</p>
             </div>
           </article>
           <article class="category-item">
-            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80" alt="Personal accessories" />
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80" alt="Accessories category" />
             <div>
               <h3>Accessories</h3>
-              <p>Refined essentials that travel beautifully with you.</p>
+              <p>Refined pieces made for movement and style.</p>
             </div>
           </article>
           <article class="category-item">
-            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=700&q=80" alt="Reusable products" />
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=700&q=80" alt="Reusable living category" />
             <div>
               <h3>Reusable Living</h3>
-              <p>Reusable solutions that make small swaps feel easy.</p>
+              <p>Small swaps, big impact, smarter routines.</p>
             </div>
           </article>
         </div>
@@ -147,8 +142,8 @@
       <section id="shop" class="shop container">
         <div class="section-heading row-heading">
           <div>
-            <span class="eyebrow">Best sellers</span>
-            <h2>Our most-loved finds</h2>
+            <span class="eyebrow">Bestsellers</span>
+            <h2>Shop the collection</h2>
           </div>
 
           <div class="shop-controls">
@@ -170,47 +165,47 @@
 
       <section id="featured" class="feature-banner container">
         <div class="feature-copy">
-          <span class="eyebrow">Earth-first essentials</span>
-          <h2>Designed to be used daily, loved for years.</h2>
+          <span class="eyebrow">A slower, smarter way to shop</span>
+          <h2>Beautifully sustainable. Built for everyday life.</h2>
           <p>
-            Our curated collection helps you live more intentionally without compromising on comfort,
-            style, or performance.
+            Every product is chosen for thoughtful materials, elevated design, and the everyday value
+            of using less but choosing better.
           </p>
-          <a href="#shop" class="btn btn-primary">Explore collection</a>
+          <a href="#shop" class="btn btn-primary">Explore the edit</a>
         </div>
         <div class="feature-image-wrap">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Eco lifestyle product arrangement" />
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80" alt="Eco lifestyle lifestyle arrangement" />
         </div>
       </section>
 
       <section class="benefits container">
         <div class="benefit-card">
           <span class="icon">🌿</span>
-          <h3>Thoughtful sourcing</h3>
-          <p>Small-batch, low-impact materials chosen for durability and design.</p>
+          <h3>Mindfully sourced</h3>
+          <p>Premium materials selected for longevity, beauty, and low environmental impact.</p>
         </div>
         <div class="benefit-card">
           <span class="icon">♻️</span>
-          <h3>Zero-waste goal</h3>
-          <p>Reuse-first packaging and recyclable delivery materials.</p>
+          <h3>Low-waste packaging</h3>
+          <p>Reusable, recyclable, and minimal packaging every step of the way.</p>
         </div>
         <div class="benefit-card">
           <span class="icon">🚚</span>
-          <h3>Fast, carbon-aware shipping</h3>
-          <p>We optimize dispatch to reduce waste and keep orders on time.</p>
+          <h3>Carbon-aware shipping</h3>
+          <p>We optimize dispatch and fulfillment to reduce unnecessary emissions.</p>
         </div>
       </section>
 
       <section id="reviews" class="testimonials container">
         <div class="section-heading centered">
-          <span class="eyebrow">Customer stories</span>
-          <h2>Why people keep coming back</h2>
+          <span class="eyebrow">Customer love</span>
+          <h2>People come back for the feeling</h2>
         </div>
 
         <div class="testimonial-grid">
           <article class="testimonial">
             <div class="stars">★★★★★</div>
-            <p>“The quality feels premium, and I love that every order aligns with my eco values.”</p>
+            <p>“The quality, the packaging, and the intention behind each item feels truly elevated.”</p>
             <div class="person">
               <strong>Priya S.</strong>
               <span>Verified buyer</span>
@@ -218,18 +213,18 @@
           </article>
           <article class="testimonial">
             <div class="stars">★★★★★</div>
-            <p>“Finally, a shop that makes sustainable living feel beautiful and effortless.”</p>
+            <p>“A rare place where sustainable living feels rich, refined, and effortless.”</p>
             <div class="person">
               <strong>Rohan M.</strong>
-              <span>Home essentials</span>
+              <span>Home collection</span>
             </div>
           </article>
           <article class="testimonial">
             <div class="stars">★★★★★</div>
-            <p>“Beautiful packaging, thoughtful products, and the best wellness finds I’ve tried.”</p>
+            <p>“I wanted better everyday products and found a thoughtful brand that actually delivers.”</p>
             <div class="person">
               <strong>Leah T.</strong>
-              <span>Wellness collection</span>
+              <span>Wellness essentials</span>
             </div>
           </article>
         </div>
@@ -239,38 +234,37 @@
         <div class="about-content">
           <div class="about-text">
             <span class="eyebrow">Our mission</span>
-            <h2>Make mindful living easier and more joyful.</h2>
+            <h2>Make conscious choices feel as good as they look.</h2>
             <p>
-              Ecoomars was created for people who care about the impact of their purchases and the
-              quality of their everyday life. We source consciously, curate beautifully, and design
-              around the rhythm of real life.
+              Ecoomars brings together eco-materials, modern design, and useful everyday rituals.
+              We believe mindful living should feel premium, easy, and genuinely beautiful.
             </p>
           </div>
           <div class="stats-box">
             <div>
               <strong>98%</strong>
-              <span>of products are eco-conscious</span>
+              <span>of our collection is eco-conscious</span>
             </div>
             <div>
-              <strong>2K+</strong>
-              <span>products delivered sustainably</span>
+              <strong>2.5k+</strong>
+              <span>orders fulfilled with low-impact shipping</span>
             </div>
             <div>
               <strong>24/7</strong>
-              <span>friendly support</span>
+              <span>member support</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="newsletter" class="newsletter">
+      <section class="newsletter">
         <div class="container newsletter-inner">
           <div>
             <span class="eyebrow">Stay in the loop</span>
-            <h2>Get eco tips, new drops, and member-only offers.</h2>
+            <h2>Get exclusive drops and eco inspiration.</h2>
           </div>
           <form class="newsletter-form" aria-label="Newsletter signup">
-            <input type="email" placeholder="Enter your email" aria-label="Your email" />
+            <input type="email" placeholder="Your email" aria-label="Your email" />
             <button type="submit" class="btn btn-primary">Join now</button>
           </form>
         </div>
@@ -296,11 +290,92 @@
           <span>Total</span>
           <strong id="total">$0.00</strong>
         </div>
-        <button class="btn btn-primary cart-checkout">Proceed to checkout</button>
+        <button class="btn btn-primary cart-checkout" id="checkoutBtn">Proceed to checkout</button>
       </div>
     </aside>
 
     <div class="overlay"></div>
+
+    <div class="modal" id="loginModal" aria-hidden="true">
+      <div class="modal-panel">
+        <button class="modal-close" data-close="loginModal" aria-label="Close login">×</button>
+        <span class="eyebrow">Welcome back</span>
+        <h3>Sign in to Ecoomars</h3>
+        <form id="loginForm">
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" placeholder="Enter your password" required />
+          </label>
+          <button type="submit" class="btn btn-primary full-width">Sign in</button>
+        </form>
+        <p class="modal-note">New customer? <a href="#">Create account</a></p>
+      </div>
+    </div>
+
+    <div class="modal" id="checkoutModal" aria-hidden="true">
+      <div class="modal-panel checkout-panel">
+        <button class="modal-close" data-close="checkoutModal" aria-label="Close checkout">×</button>
+        <span class="eyebrow">Secure checkout</span>
+        <h3>Complete your order</h3>
+        <form id="checkoutForm">
+          <div class="checkout-grid">
+            <div>
+              <label>
+                Full name
+                <input type="text" name="name" placeholder="Your full name" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="checkoutEmail" placeholder="name@example.com" required />
+              </label>
+              <label>
+                Address
+                <input type="text" name="address" placeholder="Street address" required />
+              </label>
+            </div>
+            <div>
+              <label>
+                City
+                <input type="text" name="city" placeholder="City" required />
+              </label>
+              <label>
+                Postal code
+                <input type="text" name="postal" placeholder="Postal code" required />
+              </label>
+              <label>
+                Payment method
+                <select name="payment" required>
+                  <option value="card">Credit / Debit Card</option>
+                  <option value="upi">UPI</option>
+                  <option value="wallet">Digital Wallet</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout-summary">
+            <div class="summary-row">
+              <span>Items</span>
+              <strong id="checkoutItems">0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <strong id="checkoutShipping">$0.00</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <strong id="checkoutTotal">$0.00</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">Place order</button>
+        </form>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -309,7 +384,7 @@
             <span class="brand-mark">E</span>
             <span>ecoomars</span>
           </div>
-          <p>Elevated essentials for greener living.</p>
+          <p>Luxury essentials for a richer, kinder everyday.</p>
         </div>
         <div>
           <h4>Shop</h4>
@@ -324,7 +399,7 @@
           <ul>
             <li><a href="#about">About us</a></li>
             <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#newsletter">Journal</a></li>
           </ul>
         </div>
         <div>
@@ -337,7 +412,7 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        <p>© 2026 Ecoomars. Designed for a kinder world.</p>
+        <p>© 2026 Ecoomars. Thoughtful living, beautifully delivered.</p>
       </div>
     </footer>
 
